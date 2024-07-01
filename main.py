@@ -6,7 +6,7 @@ import argparse
 
 
 parser = argparse.ArgumentParser(description='Github search')
-parser.add_argument("-t", "--token", type=str, help="auth_token", required=True)
+parser.add_argument('-t', '--token', type=str, help="auth_token", required=True)
 # parser.add_argument('-v', '--verbose', required=False, help="verbose messages")
 parser.add_argument('-f','--filename', type=argparse.FileType('r'), help="file with absolute path containing multiple queries. Only one query should be in one line.")
 parser.add_argument('-o', '--output', type=str, required=False, default="github-scan", help="output filename")
