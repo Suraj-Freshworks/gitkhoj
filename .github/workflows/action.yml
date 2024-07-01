@@ -26,8 +26,10 @@ jobs:
     
       # Runs commands using the runners shell
       - name: run script
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          python gitkhoj.py ${{ secrets.GH_TOKEN }} ${{ inputs.queries }}
+          python gitkhoj.py "$GH_TOKEN" "${{ inputs.queries }}"
         shell: sh
         
       - name: Uploading the output
