@@ -26,8 +26,7 @@ jobs:
     
       # Runs commands using the runners shell
       - name: run script
-        run: |
-          python main.py -t ${{ secrets.GH_TOKEN }} -q ${{ inputs.queries }}
+        run: 'python main.py -t ${{ secrets.GH_TOKEN }} -q ${{ inputs.queries }}'
         shell: sh
         
       - name: Uploading the output
