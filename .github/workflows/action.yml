@@ -9,7 +9,7 @@ on:
       queries:
         required: true
         type: string
-        default: left, right
+        default: left,right
         description: 'comma separated search keywords e.g. for searching left and right keywords in repo input left, right'
 
 
@@ -29,7 +29,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
-          python gitkhoj.py "$GH_TOKEN" "${{ inputs.queries }}"
+          python main.py -t "$GH_TOKEN" -q "${{ inputs.queries }}"
         shell: sh
         
       - name: Uploading the output
