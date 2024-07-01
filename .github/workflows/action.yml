@@ -9,8 +9,8 @@ on:
       queries:
         required: true
         type: string
-        default: left,right
-        description: 'comma separated search keywords e.g. for searching left and right keywords in repo input left,right'
+        default: left, right
+        description: 'comma separated search keywords e.g. for searching left and right keywords in repo input left, right'
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -26,7 +26,8 @@ jobs:
     
       # Runs commands using the runners shell
       - name: run script
-        run: 'python main.py -t ${{ secrets.GH_TOKEN }} -q ${{ inputs.queries }}'
+        run: |
+          python main.py -t ${{ secrets.GH_TOKEN }} -q ${{ inputs.queries }}
         shell: sh
         
       - name: Uploading the output
