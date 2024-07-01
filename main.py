@@ -76,15 +76,15 @@ print(final_queries)
 def main():
     count = 0
     with open(args.output+".csv",mode='w') as scanoutput:
-        fieldname = ["S.No.","Org", "result/Filepath", "URL"]
+        fieldname = ["S.No.","Org", "Repo/Filepath", "URL"]
         writer = csv.DictWriter(scanoutput, fieldnames=fieldname)
         writer.writeheader()
         for query in final_queries: 
             url = f"https://api.github.com/search/code?q={query}&per_page=100&page=1"
             results = fetch_github_results(url, headers=headers)
             for result in results:
-                    writer.writerow({"S.No.":f"{count+1}","Org":f"{result['resultsitory']['owner']['login']}", "result/Filepath": f"{result['path']}" , "URL":f"{result['html_url']}"})
-                    print(f"{Fore.RED}Result {count+1} for {query}: {result['resultsitory']['owner']['login']}  {result['path']}  {result['html_url']}{Fore.WHITE}")
+                    writer.writerow({"S.No.":f"{count+1}","Org":f"{result['repository']['owner']['login']}", "Repo/Filepath": f"{result['path']}" , "URL":f"{result['html_url']}"})
+                    print(f"{Fore.RED}Result {count+1} for {query}: {result['repository']['owner']['login']}  {result['path']}  {result['html_url']}{Fore.WHITE}")
                     count+=1
     print(f"{Fore.RED}{count} results are found.{Fore.WHITE}")
 
