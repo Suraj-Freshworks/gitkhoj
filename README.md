@@ -1,2 +1,2 @@
 # gitkhoj
-Search keywords through different github orgs
+Search keywords in multiple github orgs and get output in CSV file
