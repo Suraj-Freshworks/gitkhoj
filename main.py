@@ -40,9 +40,11 @@ def create_query():
 
     url = "https://api.github.com/user/orgs?per_page=100"
     response = requests.request("GET", url, headers=headers).json()
+    print(response)
 
     for records in response:    
         name = orgs.append(records['login'].strip())
+        print(name)
 
     for org in orgs:
         tmp = ["org:"+org+"%20"+search_term.strip() for search_term in search_terms]
