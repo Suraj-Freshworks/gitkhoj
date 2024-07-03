@@ -9,8 +9,8 @@ on:
       queries:
         required: true
         type: string
-        default: left,right
-        description: 'comma separated search keywords e.g. for searching left and right keywords in repo input left, right'
+        default: keyword1,keyword2,keyword3
+        description: 'comma separated search keywords e.g. for searching keyword1, keyword2 and keyword3 separately in all orgs input keyword1,keyword2,keyword3'
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
